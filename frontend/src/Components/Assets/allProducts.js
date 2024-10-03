@@ -1,4 +1,4 @@
-[
+const allProducts = [
     {
         "id": 1,
         "name": "iPhone 15 Pro Max",
@@ -139,4 +139,6 @@
         "image": "https://example.com/images/amazfit_gtr_4.jpg",
         "price": 199
     }
-]
+];
+
+export default allProducts;

@@ -1,6 +1,6 @@
 const ShopCategory = () => {
     return (
-        <div>
+        <div className="shop-category">
 
         </div>
     )
