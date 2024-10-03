@@ -1,0 +1,31 @@
+---
+title: Documentación
+format:
+  pdf:
+    toc: true
+    toc-title: Índice
+    number-sections: true
+---
+
+\newpage
+# Introducción
+La siguiente documentación enumera los pasos para el diseño tanto del frontend como el backend
+
+\newpage
+# Frontend
+
+## Inicio Proyecto
+
+1. Se crea la carpeta `project07`, se crea la carpeta `frontend` y se inicializa el proyecto
+
+```sh
+mkdir frontend
+cd frontend
+npm create vite@latest .
+npm install
+```
+
+\newpage
+# Backend
+
+
