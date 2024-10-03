@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Documentación</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="documentation_files/libs/clipboard/clipboard.min.js"></script>
+<script src="documentation_files/libs/quarto-html/quarto.js"></script>
+<script src="documentation_files/libs/quarto-html/popper.min.js"></script>
+<script src="documentation_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="documentation_files/libs/quarto-html/anchor.min.js"></script>
+<link href="documentation_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="documentation_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="documentation_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="documentation_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="documentation_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">1</span> Introducción</a></li>
+  <li><a href="#frontend" id="toc-frontend" class="nav-link" data-scroll-target="#frontend"><span class="header-section-number">2</span> Frontend</a>
+  <ul class="collapse">
+  <li><a href="#inicio-proyecto" id="toc-inicio-proyecto" class="nav-link" data-scroll-target="#inicio-proyecto"><span class="header-section-number">2.1</span> Inicio Proyecto</a></li>
+  <li><a href="#arquitectura-de-carpetas" id="toc-arquitectura-de-carpetas" class="nav-link" data-scroll-target="#arquitectura-de-carpetas"><span class="header-section-number">2.2</span> Arquitectura de Carpetas</a></li>
+  <li><a href="#creación-componente-navbar" id="toc-creación-componente-navbar" class="nav-link" data-scroll-target="#creación-componente-navbar"><span class="header-section-number">2.3</span> Creación Componente <code>Navbar</code></a></li>
+  <li><a href="#creación-de-páginas" id="toc-creación-de-páginas" class="nav-link" data-scroll-target="#creación-de-páginas"><span class="header-section-number">2.4</span> Creación de páginas</a></li>
+  <li><a href="#creación-de-rutas" id="toc-creación-de-rutas" class="nav-link" data-scroll-target="#creación-de-rutas"><span class="header-section-number">2.5</span> Creación de Rutas</a></li>
+  <li><a href="#conexión-de-rutas-con-navbar" id="toc-conexión-de-rutas-con-navbar" class="nav-link" data-scroll-target="#conexión-de-rutas-con-navbar"><span class="header-section-number">2.6</span> Conexión de Rutas con Navbar</a></li>
+  <li><a href="#creación-de-componenete-hero" id="toc-creación-de-componenete-hero" class="nav-link" data-scroll-target="#creación-de-componenete-hero"><span class="header-section-number">2.7</span> Creación de componenete <code>Hero</code></a></li>
+  <li><a href="#creación-de-componente-item" id="toc-creación-de-componente-item" class="nav-link" data-scroll-target="#creación-de-componente-item"><span class="header-section-number">2.8</span> Creación de Componente <code>Item</code></a></li>
+  </ul></li>
+  <li><a href="#backend" id="toc-backend" class="nav-link" data-scroll-target="#backend"><span class="header-section-number">3</span> Backend</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Documentación</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introducción" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introducción</h1>
+<p>La siguiente documentación enumera los pasos para el diseño tanto del frontend como el backend</p>
+</section>
+<section id="frontend" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Frontend</h1>
+<section id="inicio-proyecto" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="inicio-proyecto"><span class="header-section-number">2.1</span> Inicio Proyecto</h2>
+<p>Se crea la carpeta <code>project07</code>. Luego se crea la carpeta <code>frontend</code> dentro y se inicializa el proyecto</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> project07</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> project07</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> frontend</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> frontend</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> create vite@latest .</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install react-router-dom</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="arquitectura-de-carpetas" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="arquitectura-de-carpetas"><span class="header-section-number">2.2</span> Arquitectura de Carpetas</h2>
+<p>Se crean las carpetas <code>Components</code>, <code>Context</code> y <code>Pages</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">__</span> Pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creación-componente-navbar" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="creación-componente-navbar"><span class="header-section-number">2.3</span> Creación Componente <code>Navbar</code></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components  </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Navbar.css</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Navbar.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Navbar.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="Navbar.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">'react'</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./Navbar.css'</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logo <span class="im">from</span> <span class="st">'../Assets/logo.jpg'</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cart_icon <span class="im">from</span> <span class="st">'../Assets/cart.png'</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Navbar <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> [menu<span class="op">,</span>setMenu] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">"shop"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"navbar"</span><span class="kw">&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-logo"</span><span class="kw">&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>logo<span class="va">}</span> <span class="ot">alt</span><span class="op">=</span><span class="st">""</span> <span class="kw">/&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Project07<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ul</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-menu"</span><span class="kw">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"shop"</span>) } <span class="va">}</span><span class="kw">&gt;</span>Shop <span class="va">{</span> menu <span class="op">===</span> <span class="st">"shop"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"smartphone"</span>) } <span class="va">}</span><span class="kw">&gt;</span>Smartphone <span class="va">{</span> menu <span class="op">===</span> <span class="st">"smartphone"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"laptop"</span>) } <span class="va">}</span><span class="kw">&gt;</span>Laptop <span class="va">{</span> menu <span class="op">===</span> <span class="st">"laptop"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"tablet"</span>) } <span class="va">}</span><span class="kw">&gt;</span>Tablet <span class="va">{</span> menu <span class="op">===</span> <span class="st">"tablet"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"smartwatch"</span>) } <span class="va">}</span><span class="kw">&gt;</span>Smartwatch <span class="va">{</span> menu <span class="op">===</span> <span class="st">"smartwatch"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-login-cart"</span><span class="kw">&gt;</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;button&gt;</span>Login<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>cart_icon<span class="va">}</span> <span class="ot">alt</span><span class="op">=</span><span class="st">""</span> <span class="kw">/&gt;</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-cart-count"</span><span class="kw">&gt;</span>0<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Navbar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creación-de-páginas" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="creación-de-páginas"><span class="header-section-number">2.4</span> Creación de páginas</h2>
+<ul>
+<li><code>Cart.jsx</code></li>
+<li><code>LoginSignup.jsx</code></li>
+<li><code>Product.jsx</code></li>
+<li><code>Shop.jsx</code></li>
+<li><code>ShopCategory.jsx</code></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Pages  </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Cart.jsx</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> LoginSignup.jsx</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Product.jsx</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Shop.jsx</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> ShopCategory.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="creación-de-rutas" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="creación-de-rutas"><span class="header-section-number">2.5</span> Creación de Rutas</h2>
+<ul>
+<li>Se realiza en el archivo <code>App.js</code></li>
+<li>Se agregan rutas para los distintos productos: smartphone, laptop, tablet, smartwatch</li>
+<li>Se agregan rutas para el id del producto, cart, login</li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>App.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="App.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./App.css'</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Navbar <span class="im">from</span> <span class="st">'./Components/Navbar/Navbar'</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { BrowserRouter<span class="op">,</span> Routes<span class="op">,</span> Route} <span class="im">from</span> <span class="st">'react-router-dom'</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Shop <span class="im">from</span> <span class="st">'./Pages/Shop'</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ShopCategory <span class="im">from</span> <span class="st">'./Pages/ShopCategory'</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Product <span class="im">from</span> <span class="st">'./Pages/Product'</span><span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> LoginSignup <span class="im">from</span> <span class="st">'./Pages/LoginSignup'</span><span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Cart <span class="im">from</span> <span class="st">'./Pages/Cart'</span><span class="op">;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">App</span>() {</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> (</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;div</span> <span class="ot">classNAme</span><span class="op">=</span><span class="st">"App"</span><span class="kw">&gt;</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;BrowserRouter&gt;</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        <span class="fu">&lt;Navbar/&gt;</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="fu">&lt;Routes&gt;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;Shop/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/smartphone'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;ShopCategory</span> <span class="ot">category</span><span class="op">=</span><span class="st">"smartphone"</span> <span class="fu">/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/laptop'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;ShopCategory</span> <span class="ot">category</span><span class="op">=</span><span class="st">"laptop"</span> <span class="fu">/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/tablet'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;ShopCategory</span> <span class="ot">category</span><span class="op">=</span><span class="st">"tablet"</span> <span class="fu">/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/smartwatch'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;ShopCategory</span> <span class="ot">category</span><span class="op">=</span><span class="st">"smartwatch"</span> <span class="fu">/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/product:productId'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;Product/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/cart'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;Cart/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>          <span class="fu">&lt;Route</span> <span class="ot">path</span><span class="op">=</span><span class="st">'/login'</span> <span class="ot">element</span><span class="op">=</span><span class="va">{</span><span class="fu">&lt;LoginSignup/&gt;</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>        <span class="fu">&lt;/Routes&gt;</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">&lt;/BrowserRouter&gt;</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span>   </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  )<span class="op">;</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> App</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="conexión-de-rutas-con-navbar" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="conexión-de-rutas-con-navbar"><span class="header-section-number">2.6</span> Conexión de Rutas con Navbar</h2>
+<ul>
+<li>Se agrega el elemento <code>&lt;Link&gt;</code> con la ruta para elemento de <code>Navbar</code>
+<ul>
+<li><code>/</code> para texto Shop</li>
+<li><code>/smartphone</code> para texto Smartphone</li>
+<li><code>/laptop</code> para texto Laptop</li>
+<li><code>/tablet</code> para texto Tablet</li>
+<li><code>/smartwatch</code> para texto Smartwatch</li>
+<li><code>/login</code> para Boton Login</li>
+<li><code>/cart</code> para imagen de carrito de compra</li>
+</ul></li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Navbar.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="Navbar.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useState } <span class="im">from</span> <span class="st">'react'</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./Navbar.css'</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logo <span class="im">from</span> <span class="st">'../Assets/logo.jpg'</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cart_icon <span class="im">from</span> <span class="st">'../Assets/cart.png'</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { Link } <span class="im">from</span> <span class="st">'react-router-dom'</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Navbar <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> [menu<span class="op">,</span>setMenu] <span class="op">=</span> <span class="fu">useState</span>(<span class="st">"shop"</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"navbar"</span><span class="kw">&gt;</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-logo"</span><span class="kw">&gt;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>logo<span class="va">}</span> <span class="ot">alt</span><span class="op">=</span><span class="st">""</span> <span class="kw">/&gt;</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Project07<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;ul</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-menu"</span><span class="kw">&gt;</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"shop"</span>) } <span class="va">}</span><span class="kw">&gt;</span><span class="fu">&lt;Link</span> <span class="ot">style</span><span class="op">=</span><span class="va">{</span>{<span class="dt">textDecoration</span><span class="op">:</span><span class="st">'none'</span>}<span class="va">}</span> <span class="ot">to</span><span class="op">=</span><span class="st">'/'</span><span class="fu">&gt;</span>Shop<span class="fu">&lt;/Link&gt;</span>  <span class="va">{</span> menu <span class="op">===</span> <span class="st">"shop"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"smartphone"</span>) } <span class="va">}</span><span class="kw">&gt;</span><span class="fu">&lt;Link</span> <span class="ot">style</span><span class="op">=</span><span class="va">{</span>{<span class="dt">textDecoration</span><span class="op">:</span><span class="st">'none'</span>}<span class="va">}</span> <span class="ot">to</span><span class="op">=</span><span class="st">'/smartphone'</span><span class="fu">&gt;</span>Smartphone<span class="fu">&lt;/Link&gt;</span> <span class="va">{</span> menu <span class="op">===</span> <span class="st">"smartphone"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"laptop"</span>) } <span class="va">}</span><span class="kw">&gt;</span><span class="fu">&lt;Link</span> <span class="ot">style</span><span class="op">=</span><span class="va">{</span>{<span class="dt">textDecoration</span><span class="op">:</span><span class="st">'none'</span>}<span class="va">}</span> <span class="ot">to</span><span class="op">=</span><span class="st">'/laptop'</span><span class="fu">&gt;</span>Laptop<span class="fu">&lt;/Link&gt;</span> <span class="va">{</span> menu <span class="op">===</span> <span class="st">"laptop"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"tablet"</span>) } <span class="va">}</span><span class="kw">&gt;</span><span class="fu">&lt;Link</span> <span class="ot">style</span><span class="op">=</span><span class="va">{</span>{<span class="dt">textDecoration</span><span class="op">:</span><span class="st">'none'</span>}<span class="va">}</span> <span class="ot">to</span><span class="op">=</span><span class="st">'/tablet'</span><span class="fu">&gt;</span>Tablet<span class="fu">&lt;/Link&gt;</span> <span class="va">{</span> menu <span class="op">===</span> <span class="st">"tablet"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;li</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span> ()<span class="kw">=&gt;</span>{ <span class="fu">setMenu</span>(<span class="st">"smartwatch"</span>) } <span class="va">}</span><span class="kw">&gt;</span><span class="fu">&lt;Link</span> <span class="ot">style</span><span class="op">=</span><span class="va">{</span>{<span class="dt">textDecoration</span><span class="op">:</span><span class="st">'none'</span>}<span class="va">}</span> <span class="ot">to</span><span class="op">=</span><span class="st">'/smartwatch'</span><span class="fu">&gt;</span>Smartwatch<span class="fu">&lt;/Link&gt;</span> <span class="va">{</span> menu <span class="op">===</span> <span class="st">"smartwatch"</span> <span class="op">? </span><span class="kw">&lt;hr/&gt;</span> <span class="op">: </span><span class="kw">&lt;&gt;&lt;/&gt;</span> <span class="va">}</span><span class="kw">&lt;/li&gt;</span></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/ul&gt;</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-login-cart"</span><span class="kw">&gt;</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>                <span class="fu">&lt;Link</span> <span class="ot">to</span><span class="op">=</span><span class="st">'/login'</span><span class="fu">&gt;</span><span class="kw">&lt;button&gt;</span>Login<span class="kw">&lt;/button&gt;</span><span class="fu">&lt;/Link&gt;</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>                <span class="fu">&lt;Link</span> <span class="ot">to</span><span class="op">=</span><span class="st">'/cart'</span><span class="fu">&gt;</span><span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>cart_icon<span class="va">}</span> <span class="ot">alt</span><span class="op">=</span><span class="st">""</span> <span class="kw">/&gt;</span><span class="fu">&lt;/Link&gt;</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"nav-cart-count"</span><span class="kw">&gt;</span>0<span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Navbar</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creación-de-componenete-hero" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="creación-de-componenete-hero"><span class="header-section-number">2.7</span> Creación de componenete <code>Hero</code></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Hero</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Hero.css</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Hero.jsx</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Navbar.css</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Navbar.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Hero.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb9" data-filename="Hero.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./Hero.css'</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> hero_img <span class="im">from</span> <span class="st">'../Assets/hero.png'</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Hero <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">'hero'</span><span class="kw">&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;h2&gt;</span>New Products!!<span class="kw">&lt;/h2&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>hero_img<span class="va">}</span> <span class="ot">alt</span><span class="op">=</span><span class="st">""</span> <span class="kw">/&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Hero</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Luego se agrega el componente <code>Hero</code> en la página <code>Shop</code></p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Shop.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb10" data-filename="Shop.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Hero <span class="im">from</span> <span class="st">'../Components/Hero/Hero'</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Shop <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>            <span class="fu">&lt;Hero/&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Shop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creación-de-componente-item" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="creación-de-componente-item"><span class="header-section-number">2.8</span> Creación de Componente <code>Item</code></h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Hero</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Hero.css</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Hero.jsx</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Item</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Item.css</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Item.jsx</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Navbar.css</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Navbar.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Item.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb12" data-filename="Item.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Item <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">'item'</span><span class="kw">&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="backend" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Backend</h1>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

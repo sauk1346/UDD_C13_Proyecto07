@@ -1,22 +1,15 @@
 ---
 title: Documentación
 format:
-  pdf:
+  html:
     toc: true
     toc-title: Índice
     number-sections: true
-
-include-in-header: 
-  text: |
-    \usepackage{fvextra}
-    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
 ---
 
-\newpage
 # Introducción
 La siguiente documentación enumera los pasos para el diseño tanto del frontend como el backend
 
-\newpage
 # Frontend
 
 ## Inicio Proyecto
@@ -30,6 +23,7 @@ mkdir frontend
 cd frontend
 npm create vite@latest .
 npm install
+npm install react-router-dom
 ```
 
 ## Arquitectura de Carpetas
@@ -57,7 +51,7 @@ project07
 |   |   |   |    |__ Navbar.jsx
 ```
 
-```jsx
+```{.jsx filename="Navbar.jsx"}
 import { useState } from 'react'
 import './Navbar.css'
 import logo from '../Assets/logo.jpg'
@@ -89,11 +83,188 @@ const Navbar = () => {
     )
 }
 export default Navbar
+```
 
+## Creación de páginas 
+
+- `Cart.jsx`
+- `LoginSignup.jsx`
+- `Product.jsx`
+- `Shop.jsx`
+- `ShopCategory.jsx`
+
+```sh
+project07
+|-- frontend
+|   |-- src 
+|   |   |-- Pages  
+|   |   |   |-- Cart.jsx
+|   |   |   |-- LoginSignup.jsx
+|   |   |   |-- Product.jsx
+|   |   |   |-- Shop.jsx
+|   |   |   |-- ShopCategory.jsx
+```
+
+## Creación de Rutas
+
+- Se realiza en el archivo `App.js`
+- Se agregan rutas para los distintos productos: smartphone, laptop, tablet, smartwatch
+- Se agregan rutas para el id del producto, cart, login
+
+```{.jsx filename="App.jsx"}
+import './App.css'
+import Navbar from './Components/Navbar/Navbar';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import Shop from './Pages/Shop'
+import ShopCategory from './Pages/ShopCategory';
+import Product from './Pages/Product';
+import LoginSignup from './Pages/LoginSignup';
+import Cart from './Pages/Cart';
+
+function App() {
+  return (
+    <div classNAme="App">
+      <BrowserRouter>
+        <Navbar/>
+        <Routes>
+          <Route path='/' element={<Shop/>}/>
+          <Route path='/smartphone' element={<ShopCategory category="smartphone" />}/>
+          <Route path='/laptop' element={<ShopCategory category="laptop" />}/>
+          <Route path='/tablet' element={<ShopCategory category="tablet" />}/>
+          <Route path='/smartwatch' element={<ShopCategory category="smartwatch" />}/>
+          <Route path='/product:productId' element={<Product/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/login' element={<LoginSignup/>}/>
+        </Routes>
+      </BrowserRouter>
+    </div>   
+  );
+}
+
+export default App
+```
+
+## Conexión de Rutas con Navbar
+
+- Se agrega el elemento `<Link>` con la ruta para elemento de `Navbar`
+	- `/` para texto Shop
+	- `/smartphone` para texto Smartphone
+	- `/laptop` para texto Laptop
+	- `/tablet` para texto Tablet
+	- `/smartwatch` para texto Smartwatch
+	- `/login` para Boton Login
+	- `/cart` para imagen de carrito de compra
+
+```{.jsx filename="Navbar.jsx"}
+import { useState } from 'react'
+import './Navbar.css'
+import logo from '../Assets/logo.jpg'
+import cart_icon from '../Assets/cart.png'
+import { Link } from 'react-router-dom'
+
+const Navbar = () => {
+
+    const [menu,setMenu] = useState("shop")
+
+    return (
+        <div className="navbar">
+            <div className="nav-logo">
+                <img src={logo} alt="" />
+                <p>Project07</p>
+            </div>
+            <ul className="nav-menu">
+                <li onClick={ ()=>{ setMenu("shop") } }><Link style={{textDecoration:'none'}} to='/'>Shop</Link>  { menu === "shop" ? <hr/> : <></> }</li>
+                <li onClick={ ()=>{ setMenu("smartphone") } }><Link style={{textDecoration:'none'}} to='/smartphone'>Smartphone</Link> { menu === "smartphone" ? <hr/> : <></> }</li>
+                <li onClick={ ()=>{ setMenu("laptop") } }><Link style={{textDecoration:'none'}} to='/laptop'>Laptop</Link> { menu === "laptop" ? <hr/> : <></> }</li>
+                <li onClick={ ()=>{ setMenu("tablet") } }><Link style={{textDecoration:'none'}} to='/tablet'>Tablet</Link> { menu === "tablet" ? <hr/> : <></> }</li>
+                <li onClick={ ()=>{ setMenu("smartwatch") } }><Link style={{textDecoration:'none'}} to='/smartwatch'>Smartwatch</Link> { menu === "smartwatch" ? <hr/> : <></> }</li>
+            </ul>
+            <div className="nav-login-cart">
+                <Link to='/login'><button>Login</button></Link>
+                <Link to='/cart'><img src={cart_icon} alt="" /></Link>
+                <div className="nav-cart-count">0</div>
+            </div>
+        </div>
+    )
+}
+export default Navbar
 
 ```
 
-\newpage
+## Creación de componenete `Hero`
+
+```sh
+project07
+|-- frontend
+|   |-- src 
+|   |   |-- Components
+|   |   |   |-- Hero
+|   |   |   |    |-- Hero.css
+|   |   |   |    |__ Hero.jsx
+|   |   |   |-- Navbar
+|   |   |   |    |-- Navbar.css
+|   |   |   |    |__ Navbar.jsx
+```
+
+```{.jsx filename="Hero.jsx"}
+import './Hero.css'
+import hero_img from '../Assets/hero.png'
+
+const Hero = () => {
+    return (
+        <div className='hero'>
+            <h2>New Products!!</h2>
+            <img src={hero_img} alt="" />
+        </div>
+    )
+}
+export default Hero
+```
+
+Luego se agrega el componente `Hero` en la página `Shop`
+
+```{.jsx filename="Shop.jsx"}
+import Hero from '../Components/Hero/Hero'
+
+const Shop = () => {
+    return (
+        <div>
+            <Hero/>
+        </div>
+    )
+}
+export default Shop
+```
+
+## Creación de Componente `Item`
+
+```sh
+project07
+|-- frontend
+|   |-- src 
+|   |   |-- Components
+|   |   |   |-- Hero
+|   |   |   |    |-- Hero.css
+|   |   |   |    |__ Hero.jsx
+|   |   |   |-- Item
+|   |   |   |    |-- Item.css
+|   |   |   |    |__ Item.jsx
+|   |   |   |-- Navbar
+|   |   |   |    |-- Navbar.css
+|   |   |   |    |__ Navbar.jsx
+```
+
+```{.jsx filename="Item.jsx"}
+const Item = () => {
+    return (
+        <div className='item'>
+
+        </div>
+    )
+}
+export default Item
+```
+
 # Backend
 
 
