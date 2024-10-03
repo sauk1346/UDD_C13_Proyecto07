@@ -1,63 +1,3 @@
----
-title: Documentación
-format:
-  pdf:
-    toc: true
-    toc-title: Índice
-    number-sections: true
-
-include-in-header: 
-  text: |
-    \usepackage{fvextra}
-    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
----
-
-\newpage
-# Introducción
-La siguiente documentación enumera los pasos para el diseño tanto del frontend como el backend
-
-\newpage
-# Frontend
-
-## Inicio Proyecto
-
-Se crea la carpeta `project07`. Luego se crea la carpeta `frontend` dentro y se inicializa el proyecto
-
-```sh
-mkdir project07
-cd project07
-mkdir frontend
-cd frontend
-npm create vite@latest .
-npm install
-```
-
-## Arquitectura de Carpetas
-
-Se crean las carpetas `Components`, `Context` y `Pages`
-
-```sh
-project07
-|-- frontend
-|   |-- src 
-|   |   |-- Components  
-|   |   |-- Context
-|   |   |__ Pages
-```
-
-## Creación Componente `Navbar`
-
-```sh
-project07
-|-- frontend
-|   |-- src 
-|   |   |-- Components  
-|   |   |   |-- Navbar
-|   |   |   |    |-- Navbar.css
-|   |   |   |    |__ Navbar.jsx
-```
-
-```jsx
 import { useState } from 'react'
 import './Navbar.css'
 import logo from '../Assets/logo.jpg'
@@ -89,11 +29,3 @@ const Navbar = () => {
     )
 }
 export default Navbar
-
-
-```
-
-\newpage
-# Backend
-
-
