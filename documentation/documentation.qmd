@@ -341,6 +341,47 @@ const ShopCategory = (props) => {
 }
 export default ShopCategory
 ```
-# Backend
 
+## Desarrollo página `LoginSignUp.jsx`
 
+```{.jsx filename="LoginSignUp.jsx"}
+import './CSS/LoginSignup.css'
+
+const LoginSignup = () => {
+    return (
+        <div className='loginsignup'>
+            <div className="loginsignup-container">
+                <h1>Sign up</h1>
+                <div className="loginsignup-fields">
+                    <input type="text" placeholder="Your Name"/>
+                    <input type="email" placeholder="Email Address"/>
+                    <input type="password" placeholder="Password"/>
+                </div>
+                <button>Continue</button>
+                <p className="loginsignup-login">Already have an account? <span>Login here</span></p>
+            </div> 
+
+        </div>
+    )
+}
+export default LoginSignup
+```
+
+## Desarrollo página `Product.jsx`
+
+```{.jsx filename="Product.jsx"}
+import { useParams } from "react-router-dom";
+import { ShopContext } from "../Context/ShopContext"
+
+const Product = () => {
+    const {allProducts} = useContext(ShopContext);
+    const {productId} = useParams();
+    const product = allProducs.find((e) => e.id === Number(productID)); 
+    return (
+        <div>
+
+        </div>
+    )
+}
+export default Product
+```

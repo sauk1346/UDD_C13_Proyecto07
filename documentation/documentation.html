@@ -92,8 +92,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#creación-de-componente-item" id="toc-creación-de-componente-item" class="nav-link" data-scroll-target="#creación-de-componente-item"><span class="header-section-number">2.8</span> Creación de Componente <code>Item</code></a></li>
   <li><a href="#creación-de-shopcontext" id="toc-creación-de-shopcontext" class="nav-link" data-scroll-target="#creación-de-shopcontext"><span class="header-section-number">2.9</span> Creación de <code>ShopContext</code></a></li>
   <li><a href="#desarrollo-de-página-shopcategory" id="toc-desarrollo-de-página-shopcategory" class="nav-link" data-scroll-target="#desarrollo-de-página-shopcategory"><span class="header-section-number">2.10</span> Desarrollo de página <code>ShopCategory</code></a></li>
+  <li><a href="#desarrollo-página-loginsignup.jsx" id="toc-desarrollo-página-loginsignup.jsx" class="nav-link" data-scroll-target="#desarrollo-página-loginsignup.jsx"><span class="header-section-number">2.11</span> Desarrollo página <code>LoginSignUp.jsx</code></a></li>
+  <li><a href="#desarrollo-página-product.jsx" id="toc-desarrollo-página-product.jsx" class="nav-link" data-scroll-target="#desarrollo-página-product.jsx"><span class="header-section-number">2.12</span> Desarrollo página <code>Product.jsx</code></a></li>
   </ul></li>
-  <li><a href="#backend" id="toc-backend" class="nav-link" data-scroll-target="#backend"><span class="header-section-number">3</span> Backend</a></li>
   </ul>
 </nav>
 </div>
@@ -458,9 +459,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ShopCategory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="desarrollo-página-loginsignup.jsx" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="desarrollo-página-loginsignup.jsx"><span class="header-section-number">2.11</span> Desarrollo página <code>LoginSignUp.jsx</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>LoginSignUp.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb17" data-filename="LoginSignUp.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./CSS/LoginSignup.css'</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> LoginSignup <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">'loginsignup'</span><span class="kw">&gt;</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"loginsignup-container"</span><span class="kw">&gt;</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;h1&gt;</span>Sign up<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"loginsignup-fields"</span><span class="kw">&gt;</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;input</span> <span class="ot">type</span><span class="op">=</span><span class="st">"text"</span> <span class="ot">placeholder</span><span class="op">=</span><span class="st">"Your Name"</span><span class="kw">/&gt;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;input</span> <span class="ot">type</span><span class="op">=</span><span class="st">"email"</span> <span class="ot">placeholder</span><span class="op">=</span><span class="st">"Email Address"</span><span class="kw">/&gt;</span></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;input</span> <span class="ot">type</span><span class="op">=</span><span class="st">"password"</span> <span class="ot">placeholder</span><span class="op">=</span><span class="st">"Password"</span><span class="kw">/&gt;</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;button&gt;</span>Continue<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p</span> <span class="ot">className</span><span class="op">=</span><span class="st">"loginsignup-login"</span><span class="kw">&gt;</span>Already have an account? <span class="kw">&lt;span&gt;</span>Login here<span class="kw">&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span> </span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> LoginSignup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="backend" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Backend</h1>
+<section id="desarrollo-página-product.jsx" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="desarrollo-página-product.jsx"><span class="header-section-number">2.12</span> Desarrollo página <code>Product.jsx</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>Product.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb18" data-filename="Product.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useParams } <span class="im">from</span> <span class="st">"react-router-dom"</span><span class="op">;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { ShopContext } <span class="im">from</span> <span class="st">"../Context/ShopContext"</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Product <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {allProducts} <span class="op">=</span> <span class="fu">useContext</span>(ShopContext)<span class="op">;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {productId} <span class="op">=</span> <span class="fu">useParams</span>()<span class="op">;</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> product <span class="op">=</span> allProducs<span class="op">.</span><span class="fu">find</span>((e) <span class="kw">=&gt;</span> e<span class="op">.</span><span class="at">id</span> <span class="op">===</span> <span class="bu">Number</span>(productID))<span class="op">;</span> </span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div&gt;</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Product</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 
 </main>
