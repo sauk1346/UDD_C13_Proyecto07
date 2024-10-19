@@ -1,10 +1,21 @@
 .item {
-    width: 350px;
+    border: 1px solid #ccc; /* Añade un borde a la tarjeta (opcional) */
+    border-radius: 8px; /* Bordes redondeados (opcional) */
+    overflow: hidden; /* Oculta cualquier contenido que desborde la tarjeta */
+    margin: 10px; /* Espacio alrededor de la tarjeta */
+    max-width: 300px; /* Ancho máximo de la tarjeta */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra (opcional) */
+
 }
 .item p {
     margin: 6px 0px;
 }
 .item-price {
-    display: flex;
-    gap:20px;
+    color: #374151;
+    font-size: 18px;
+    font-weight: 600;
+}
+.item-image{
+    width: 300px;
+    height: 300px;
 }

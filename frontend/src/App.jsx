@@ -9,7 +9,7 @@ import Cart from './Pages/Cart';
 
 function App() {
   return (
-    <div classNAme="App">
+    <div className="App">
       <BrowserRouter>
         <Navbar/>
         <Routes>

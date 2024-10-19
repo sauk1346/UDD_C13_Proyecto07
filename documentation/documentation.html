@@ -90,6 +90,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#conexión-de-rutas-con-navbar" id="toc-conexión-de-rutas-con-navbar" class="nav-link" data-scroll-target="#conexión-de-rutas-con-navbar"><span class="header-section-number">2.6</span> Conexión de Rutas con Navbar</a></li>
   <li><a href="#creación-de-componenete-hero" id="toc-creación-de-componenete-hero" class="nav-link" data-scroll-target="#creación-de-componenete-hero"><span class="header-section-number">2.7</span> Creación de componenete <code>Hero</code></a></li>
   <li><a href="#creación-de-componente-item" id="toc-creación-de-componente-item" class="nav-link" data-scroll-target="#creación-de-componente-item"><span class="header-section-number">2.8</span> Creación de Componente <code>Item</code></a></li>
+  <li><a href="#creación-de-shopcontext" id="toc-creación-de-shopcontext" class="nav-link" data-scroll-target="#creación-de-shopcontext"><span class="header-section-number">2.9</span> Creación de <code>ShopContext</code></a></li>
+  <li><a href="#desarrollo-de-página-shopcategory" id="toc-desarrollo-de-página-shopcategory" class="nav-link" data-scroll-target="#desarrollo-de-página-shopcategory"><span class="header-section-number">2.10</span> Desarrollo de página <code>ShopCategory</code></a></li>
   </ul></li>
   <li><a href="#backend" id="toc-backend" class="nav-link" data-scroll-target="#backend"><span class="header-section-number">3</span> Backend</a></li>
   </ul>
@@ -138,20 +140,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Se crean las carpetas <code>Components</code>, <code>Context</code> y <code>Pages</code></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components  </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Context</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">__</span> Pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Components  </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="creación-componente-navbar" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="creación-componente-navbar"><span class="header-section-number">2.3</span> Creación Componente <code>Navbar</code></h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components  </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Navbar.css</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Navbar.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Components  </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>        <span class="kw">|</span><span class="ex">--</span> Navbar.css</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>        <span class="kw">|</span><span class="ex">__</span> Navbar.jsx</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Pages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Navbar.jsx</strong></pre>
@@ -200,13 +204,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Pages  </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Cart.jsx</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> LoginSignup.jsx</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Product.jsx</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Shop.jsx</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> ShopCategory.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Components</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Pages  </span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> Cart.jsx</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> LoginSignup.jsx</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> Product.jsx</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> Shop.jsx</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> ShopCategory.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="creación-de-rutas" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="creación-de-rutas"><span class="header-section-number">2.5</span> Creación de Rutas</h2>
@@ -307,14 +313,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.7" class="anchored" data-anchor-id="creación-de-componenete-hero"><span class="header-section-number">2.7</span> Creación de componenete <code>Hero</code></h2>
 <div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Hero</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Hero.css</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Hero.jsx</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Navbar.css</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Navbar.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Components</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Hero</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Hero.css</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">__</span> Hero.jsx</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Pages  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Hero.jsx</strong></pre>
@@ -353,29 +359,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.8" class="anchored" data-anchor-id="creación-de-componente-item"><span class="header-section-number">2.8</span> Creación de Componente <code>Item</code></h2>
 <div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> src </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Components</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Hero</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Hero.css</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Hero.jsx</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Item</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Item.css</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Item.jsx</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Navbar.css</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">__</span> Navbar.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Components</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Hero</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Item</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Item.css</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span>    <span class="kw">|</span><span class="ex">--</span> Item.jsx</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span>   <span class="kw">|</span><span class="ex">--</span> Navbar</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Pages  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>Item.jsx</strong></pre>
 </div>
-<div class="sourceCode" id="cb12" data-filename="Item.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Item <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">'item'</span><span class="kw">&gt;</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12" data-filename="Item.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./Item.css'</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> Item <span class="op">=</span> (props) <span class="kw">=&gt;</span> {</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">'item'</span><span class="kw">&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>props<span class="op">.</span><span class="at">image</span><span class="va">}</span> <span class="ot">alt</span><span class="op">=</span><span class="st">""</span> <span class="kw">/&gt;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;p&gt;</span><span class="va">{</span>props<span class="op">.</span><span class="at">name</span><span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"item-price"</span><span class="kw">&gt;</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                <span class="va">{</span>props<span class="op">.</span><span class="at">price</span><span class="va">}</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> Item</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creación-de-shopcontext" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="creación-de-shopcontext"><span class="header-section-number">2.9</span> Creación de <code>ShopContext</code></h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Components</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> ShopContext.jsx</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Pages  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ShopContext.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb14" data-filename="ShopContext.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { createContext } <span class="im">from</span> <span class="st">"react"</span><span class="op">;</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> allProducts <span class="im">from</span> <span class="st">'../Components/Assets/allProducts'</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="kw">const</span> ShopContext <span class="op">=</span> <span class="fu">createContext</span>(<span class="kw">null</span>)<span class="op">;</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ShopContextProvider <span class="op">=</span> (props) <span class="kw">=&gt;</span> {</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> contextValue <span class="op">=</span> {allProducts}<span class="op">;</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>        <span class="fu">&lt;ShopContext.Provider</span> <span class="ot">value</span><span class="op">=</span><span class="va">{</span>contextValue<span class="va">}</span><span class="fu">&gt;</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>            <span class="va">{</span>props<span class="op">.</span><span class="at">children</span><span class="va">}</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>        <span class="fu">&lt;/ShopContext.Provider&gt;</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ShopContextProvider<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="desarrollo-de-página-shopcategory" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="desarrollo-de-página-shopcategory"><span class="header-section-number">2.10</span> Desarrollo de página <code>ShopCategory</code></h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">project07</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">|</span><span class="ex">--</span> frontend</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">|</span><span class="ex">--</span> src </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Components</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Context</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="kw">|</span><span class="ex">--</span> Pages  </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> Cart.jsx</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> LoginSignup.jsx</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> Product.jsx</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> Shop.jsx</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>            <span class="kw">|</span><span class="ex">--</span> ShopCategory.jsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>ShopCategory.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb16" data-filename="ShopCategory.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useContext } <span class="im">from</span> <span class="st">'react'</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./CSS/ShopCategory.css'</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { ShopContext } <span class="im">from</span> <span class="st">'../Context/ShopContext'</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Item <span class="im">from</span> <span class="st">'../Components/Item/Item'</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> ShopCategory <span class="op">=</span> (props) <span class="kw">=&gt;</span> {</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {allProducts} <span class="op">=</span> <span class="fu">useContext</span>(ShopContext)<span class="op">;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"shop-category"</span><span class="kw">&gt;</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"shopcategory-products"</span><span class="kw">&gt;</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>                <span class="va">{</span>allProducts<span class="op">.</span><span class="fu">map</span>((item<span class="op">,</span> index) <span class="kw">=&gt;</span> {</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">if</span>(props<span class="op">.</span><span class="at">category</span> <span class="op">===</span> item<span class="op">.</span><span class="at">category</span>) {</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                        <span class="cf">return </span><span class="fu">&lt;Item</span> <span class="ot">ket</span><span class="op">=</span><span class="va">{</span>i<span class="va">}</span> <span class="ot">id</span><span class="op">=</span><span class="va">{</span>item<span class="op">.</span><span class="at">id</span><span class="va">}</span> <span class="ot">name</span><span class="op">=</span><span class="va">{</span>item<span class="op">.</span><span class="at">name</span><span class="va">}</span> <span class="ot">image</span><span class="op">=</span><span class="va">{</span>item<span class="op">.</span><span class="at">image</span><span class="va">}</span> <span class="ot">price</span><span class="op">=</span><span class="va">{</span>item<span class="op">.</span><span class="at">price</span><span class="va">}</span><span class="fu">/&gt;</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                    }</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                })<span class="va">}</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ShopCategory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
