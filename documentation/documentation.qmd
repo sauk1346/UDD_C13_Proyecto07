@@ -526,3 +526,14 @@ const CartItems = () => {
 }
 export default CartItems;
 ```
+
+# Backend
+
+```default
+npm install init
+npm install express
+npm install jsonwebtoken
+npm install mongoose
+npm install multer
+npm install cors
+```
