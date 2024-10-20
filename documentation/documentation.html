@@ -97,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#componente-breadcrum.jsx" id="toc-componente-breadcrum.jsx" class="nav-link" data-scroll-target="#componente-breadcrum.jsx"><span class="header-section-number">2.13</span> Componente <code>Breadcrum.jsx</code></a></li>
   <li><a href="#componente-productdisplay.jsx" id="toc-componente-productdisplay.jsx" class="nav-link" data-scroll-target="#componente-productdisplay.jsx"><span class="header-section-number">2.14</span> Componente <code>ProductDisplay.jsx</code></a></li>
   <li><a href="#lógica-cart" id="toc-lógica-cart" class="nav-link" data-scroll-target="#lógica-cart"><span class="header-section-number">2.15</span> Lógica Cart</a></li>
+  <li><a href="#componente-cartitems" id="toc-componente-cartitems" class="nav-link" data-scroll-target="#componente-cartitems"><span class="header-section-number">2.16</span> Componente CartItems</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -608,6 +609,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> ShopContextProvider<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="componente-cartitems" class="level2" data-number="2.16">
+<h2 data-number="2.16" class="anchored" data-anchor-id="componente-cartitems"><span class="header-section-number">2.16</span> Componente CartItems</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>CartItems.jsx</strong></pre>
+</div>
+<div class="sourceCode" id="cb22" data-filename="CartItems.jsx"><pre class="sourceCode jsx code-with-copy"><code class="sourceCode javascriptreact"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { useContext } <span class="im">from</span> <span class="st">'react'</span><span class="op">;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="st">'./CartItems.css'</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { ShopContext } <span class="im">from</span> <span class="st">'../../Context/ShopContext'</span><span class="op">;</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> remove_icon <span class="im">from</span> <span class="st">'../Assets/remove_icon.png'</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> CartItems <span class="op">=</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> {getTotalCartAmount<span class="op">,</span> allProducts<span class="op">,</span> cartItems<span class="op">,</span> removeFromCart} <span class="op">=</span> <span class="fu">useContext</span>(ShopContext)<span class="op">;</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"cartitems"</span><span class="kw">&gt;</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"cartiems-format-main"</span><span class="kw">&gt;</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Products<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Title<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Price<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Quantity<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Total<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;p&gt;</span>Remove<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;hr/&gt;</span></span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>            <span class="va">{</span>allProducts<span class="op">.</span><span class="fu">map</span>((e)<span class="kw">=&gt;</span>{</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span>(cartItems[e<span class="op">.</span><span class="at">id</span>]<span class="op">&gt;</span><span class="dv">0</span>) {</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>                    <span class="cf">return</span>(</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;div&gt;</span></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"cartitems-format cartiems-format-main"</span><span class="kw">&gt;</span></span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>                            <span class="kw">&lt;img</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>e<span class="op">.</span><span class="at">image</span><span class="va">}</span> <span class="ot">className</span><span class="op">=</span><span class="st">"carticon-product-icon"</span><span class="kw">&gt;&lt;/img&gt;</span></span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>                            <span class="kw">&lt;p&gt;</span><span class="va">{</span>e<span class="op">.</span><span class="at">name</span><span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>                            <span class="kw">&lt;p&gt;</span>$<span class="va">{</span>e<span class="op">.</span><span class="at">price</span><span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>                            <span class="kw">&lt;button</span> <span class="ot">className</span><span class="op">=</span><span class="st">"cartitems-quantity"</span><span class="kw">&gt;</span><span class="va">{</span>cartItems[e<span class="op">.</span><span class="at">id</span>]<span class="va">}</span><span class="kw">&lt;/button&gt;</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>                            <span class="kw">&lt;p&gt;</span>$<span class="va">{</span>e<span class="op">.</span><span class="at">price</span><span class="op">*</span>cartItems[e<span class="op">.</span><span class="at">id</span>]<span class="va">}</span><span class="kw">&lt;/p&gt;</span></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>                            <span class="kw">&lt;img</span> <span class="ot">className</span><span class="op">=</span><span class="st">"cartitems-remove-icon"</span> <span class="ot">src</span><span class="op">=</span><span class="va">{</span>remove_icon<span class="va">}</span> <span class="ot">onClick</span><span class="op">=</span><span class="va">{</span>()<span class="kw">=&gt;</span>{<span class="fu">removeFromCart</span>(e<span class="op">.</span><span class="at">id</span>)}<span class="va">}</span> <span class="kw">&gt;&lt;/img&gt;</span></span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>                        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>                    )</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>                }</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>                <span class="cf">return</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>            })<span class="va">}</span></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"cartitems-down"</span><span class="kw">&gt;</span></span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;div</span> <span class="ot">className</span><span class="op">=</span><span class="st">"cartiems-total"</span><span class="kw">&gt;</span></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;h1&gt;</span>Total: $<span class="va">{</span><span class="fu">getTotalCartAmount</span>()<span class="va">}</span><span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>                    <span class="kw">&lt;button&gt;</span>PROCEED TO CHECKOUT<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>                <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>            <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb22-43"><a href="#cb22-43" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb22-44"><a href="#cb22-44" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb22-45"><a href="#cb22-45" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-46"><a href="#cb22-46" aria-hidden="true" tabindex="-1"></a><span class="im">export</span> <span class="im">default</span> CartItems<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
