@@ -95,7 +95,7 @@ const Product = mongoose.model("Product", {
 El proyecto está desplegado en Render:
 
 - **Frontend:** <https://udd-c13-proyecto07-1-frontend.onrender.com/>
-- **Backend:** <https://udd-c13-proyecto07.onrender.com/
+- **Backend:** <https://udd-c13-proyecto07.onrender.com/>
 
 ## Referencias
 
