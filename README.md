@@ -99,4 +99,4 @@ El proyecto está desplegado en Render:
 
 ## Referencias
 
-UDD Bootcamp Web Fullstack, Clases 25 a 28, Profesor [Matías Molina Aguilar](https://udd-c13-proyecto07-1-frontend.onrender.com/)
+UDD Bootcamp Web Fullstack, Clases 25 a 28, Profesor [Matías Molina Aguilar](https://www.linkedin.com/in/matiasmolinaaguilar/?originalSubdomain=cl)
